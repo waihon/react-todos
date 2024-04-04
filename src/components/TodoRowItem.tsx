@@ -10,4 +10,4 @@ function TodoRowItem(props) {
 
 }
 
-export default TodoRowItem;
+export default TodoRowItem
