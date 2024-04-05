@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-function NewTodoForm({ addTodo }) {
+function NewTodoForm(props: { addTodo: Function }) {
 
   const [description, setDescription] = useState('');
   const [assigned, setAssigned] = useState('');
 
   const submitTodo = () => {
     if (description !== '' && assigned !== '') {
-      addTodo(description, assigned);
+      props.addTodo(description, assigned);
       setDescription('');
       setAssigned('');
     }
