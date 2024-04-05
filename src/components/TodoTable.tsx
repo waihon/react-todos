@@ -1,6 +1,9 @@
 import TodoRowItem from "./TodoRowItem";
 
-function TodoTable( {todos, deleteTodo} ) {
+function TodoTable(props: {
+  todos: TodoModel[],
+  deleteTodo: Function
+}) {
   return (
     <table className="table table-hover">
       <thead>
@@ -11,13 +14,13 @@ function TodoTable( {todos, deleteTodo} ) {
         </tr>
       </thead>
       <tbody>
-        {todos.map(todo =>
+        {props.todos.map(todo =>
           <TodoRowItem
             key={todo.rowNumber}
             rowNumber={todo.rowNumber}
             rowDescription={todo.rowDescription}
             rowAssigned={todo.rowAssigned}
-            deleteTodo={deleteTodo}
+            deleteTodo={props.deleteTodo}
           />
         )}
       </tbody>
